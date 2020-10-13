@@ -1,0 +1,13 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: binding-umbrella-root-ca
+  namespace: umbrella-policy
+placementRef:
+  name: placement-umbrella-openshift
+  kind: PlacementRule
+  apiGroup: apps.open-cluster-management.io
+subjects:
+- name: umbrella-root-ca
+  kind: Policy
+  apiGroup: policy.open-cluster-management.io

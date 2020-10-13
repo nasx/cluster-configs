@@ -1,0 +1,10 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Channel
+metadata:
+  name: umbrella-policy-gitops
+  namespace: umbrella-policy
+spec:
+  type: Git
+  pathname: https://github.com/nasx/cluster-configs.git
+  secretRef:
+    name: github-secret
