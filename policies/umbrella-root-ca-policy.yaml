@@ -53,4 +53,6 @@ spec:
                   name: user-ca-bundle
                   namespace: openshift-config
                 data:
-                  ca-bundle.crt: "testing123"
+                  ca-bundle.crt: |
+                    -----BEGIN CERTIFICATE-----
+                    MIIGMzCCBBugAwIBAgIBADANBgkqhkiG9w0BAQ0FADBvMRkwFwYDVQQDExB1bWJy
