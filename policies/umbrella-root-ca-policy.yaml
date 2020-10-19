@@ -42,9 +42,8 @@ spec:
           remediationAction: inform
           severity: low
           namespaceSelector:
-            exclude: []
-            include:
-              - openshift-config
+            exclude: ["kube-*"]
+            include: ["default"]
           object-templates:
             - complianceType: musthave
               objectDefinition:
