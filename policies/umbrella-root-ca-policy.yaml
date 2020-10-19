@@ -54,6 +54,6 @@ spec:
                   namespace: openshift-config
                 data:
                   ca-bundle.crt: |-
-                    ---
-                    ---
-                    ---
+                                 ---
+                                 ---
+                                 ---
