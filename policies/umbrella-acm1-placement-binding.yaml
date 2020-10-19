@@ -1,0 +1,13 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: binding-umbrella-acm1
+  namespace: umbrella-policy
+placementRef:
+  name: placement-umbrella-acm1
+  kind: PlacementRule
+  apiGroup: apps.open-cluster-management.io
+subjects:
+- name: umbrella-acm1-ingress
+  kind: Policy
+  apiGroup: policy.open-cluster-management.io
