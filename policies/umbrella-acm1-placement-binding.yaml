@@ -11,3 +11,6 @@ subjects:
 - name: umbrella-acm1-ingress
   kind: Policy
   apiGroup: policy.open-cluster-management.io
+- name: umbrella-acm1-api
+  kind: Policy
+  apiGroup: policy.open-cluster-management.io
