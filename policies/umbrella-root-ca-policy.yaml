@@ -26,6 +26,15 @@ spec:
           object-templates:
             - complianceType: musthave
               objectDefinition:
+                apiVersion: config.openshift.io/v1
+                kind: Proxy
+                metadata:
+                  name: cluster
+                spec:
+                  trustedCA:
+                    name: user-ca-bundle
+            - complianceType: musthave
+              objectDefinition:
                 apiVersion: v1
                 kind: ConfigMap
                 metadata:
@@ -69,12 +78,3 @@ spec:
                     +NPjvtiRT2yOnYHOtOF9h2UkuC0fwwdmfonqj2DCCdqF+rbO3gXDZExE2+CtE4Xi
                     MBHbJ+an3A==
                     -----END CERTIFICATE-----
-            - complianceType: musthave
-              objectDefinition:
-                apiVersion: config.openshift.io/v1
-                kind: Proxy
-                metadata:
-                  name: cluster
-                spec:
-                  trustedCA:
-                    name: user-ca-bundle
