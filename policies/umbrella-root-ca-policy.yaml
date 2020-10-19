@@ -17,7 +17,7 @@ spec:
         metadata:
           name: umbrella-proxy-config
         spec:
-          remediationAction: inform
+          remediationAction: enforce
           severity: low
           namespaceSelector:
             exclude: []
@@ -39,7 +39,7 @@ spec:
         metadata:
           name: umbrella-root-ca
         spec:
-          remediationAction: inform
+          remediationAction: enforce
           severity: low
           namespaceSelector:
             exclude: ["kube-*"]
