@@ -54,5 +54,11 @@ spec:
                   namespace: openshift-config
                 data:
                   ca-bundle.crt: |-
-                    -----BEGIN CERTIFICATE-----
-                    MIIGMzCCBBugAwIBAgIBADANBgkqhkiG9w0BAQ0FADBvMRkwFwYDVQQDExB1bWJy
+                    package kubernetes.admission
+                    deny[msg] {
+                        input.request.kind.kind == "Pod"
+                        input.request.namespace == "opa"
+                        image := input.request.object.spec.containers[_].image
+                        not startswith(image, "hooli.com")
+                        msg := sprintf("image fails to come from trusted registry: %v", [image])
+                    }
