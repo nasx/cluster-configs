@@ -11,6 +11,3 @@ subjects:
 - name: umbrella-root-ca
   kind: Policy
   apiGroup: policy.open-cluster-management.io
-- name: umbrella-proxy-config
-  kind: Policy
-  apiGroup: policy.open-cluster-management.io

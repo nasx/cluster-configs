@@ -15,7 +15,7 @@ spec:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
         metadata:
-          name: umbrella-proxy-config
+          name: umbrella-root-ca
         spec:
           remediationAction: enforce
           severity: low
@@ -33,18 +33,6 @@ spec:
                 spec:
                   trustedCA:
                     name: user-ca-bundle
-    - objectDefinition:
-        apiVersion: policy.open-cluster-management.io/v1
-        kind: ConfigurationPolicy
-        metadata:
-          name: umbrella-root-ca
-        spec:
-          remediationAction: enforce
-          severity: low
-          namespaceSelector:
-            exclude: ["kube-*"]
-            include: ["default"]
-          object-templates:
             - complianceType: musthave
               objectDefinition:
                 apiVersion: v1
@@ -54,7 +42,6 @@ spec:
                   namespace: openshift-config
                 data:
                   ca-bundle.crt: |-
-                    
                     -----BEGIN CERTIFICATE-----
                     MIIGMzCCBBugAwIBAgIBADANBgkqhkiG9w0BAQ0FADBvMRkwFwYDVQQDExB1bWJy
                     ZWxsYS1yb290LWNhMQswCQYDVQQGEwJVUzERMA8GA1UECBMIVmlyZ2luaWExFTAT
