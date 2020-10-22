@@ -46,3 +46,16 @@ spec:
                       name: api-cert
                       namespace: openshift-config
                     type: kubernetes.io/tls
+            - complianceType: musthave
+              objectDefinition:
+                apiVersion: config.openshift.io/v1
+                kind: APIServer
+                metadata:
+                  name: cluster
+                spec:
+                  servingCerts:
+                    namedCertificates:
+                    - names:
+                      - api.acm-managed-1.ocp.pwc.umbrella.local
+                      servingCertificate:
+                        name: api-cert
