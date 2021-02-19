@@ -1,0 +1,20 @@
+apiVersion: imageregistry.operator.openshift.io/v1
+kind: Config
+metadata:
+  name: cluster
+spec:
+  managementState: Managed
+  defaultRoute: "true"
+  replicas: 3
+  storage:
+    pvc:
+      claim: registry-shared-storage
+  nodeSelector:
+    node-role.kubernetes.io/infra: ''
+  tolerations:
+  - effect: NoSchedule
+    key: infra
+    value: reserved
+  - effect: NoExecute
+    key: infra
+    value: reserved
